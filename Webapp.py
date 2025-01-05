@@ -42,6 +42,7 @@ if model_choice == 'PSG Model':
 elif model_choice == 'NPE Model':
     data_2 = pd.read_csv('ZJU4HSMOTEDATA.csv')
     selected_features = ["wbc", "RBC", "TC", "HDL-C", "UA", "smoke", "HTN", "GENDER", "AGE", "bmi"]
+    feature_inputs = []
     for feature in selected_features:
         val = st.number_input(f'Enter {feature}', value=0.0)
         feature_inputs.append(val)
