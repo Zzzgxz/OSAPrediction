@@ -42,11 +42,9 @@ if model_choice == 'PSG Model':
     # 根据特征类型设置不同的输入框
     for feature in selected_features:
         if feature == 'AGE':
-            val = st.number_input(f'Enter {feature}', min_value=0, max_value=120, step=1, value=30)  # 整数输入框
-        elif feature in ['HEIGHT', 'WEIGHT', 'MINSPO2', 'AUGSPO2', 'TG', 'SLEEPEFFICIENCY', 'HDL-C']:
+            val = st.slider(f'Enter {feature}', min_value=0, max_value=120, step=1, value=30)  # 整数输入框
+        elif feature in ['HEIGHT', 'WEIGHT', 'MINSPO2', 'AUGSPO2', 'TG', 'SLEEPEFFICIENCY', 'HDL-C','ODI']:
             val = st.number_input(f'Enter {feature}', min_value=0.0, step=0.1, value=0.0)  # 浮点数输入框
-        elif feature == 'ODI':
-            val = st.slider(f'Enter {feature}', min_value=0, max_value=100, value=50)  # 滑动条
         else:
             val = st.text_input(f'Enter {feature}', '')  # 默认文本框
         feature_inputs.append(val)
@@ -80,7 +78,7 @@ elif model_choice == 'NPE Model':
         elif feature == 'GENDER':  # 性别，假设 0 为男性，1 为女性
             val = st.selectbox(f'Enter {feature} (0 for Male, 1 for Female)', options=[0, 1], index=0)
         elif feature == 'AGE':  # 年龄，整数输入
-            val = st.number_input(f'Enter {feature} ({units["AGE"]})', min_value=0, max_value=120, step=1, value=30)
+            val = st.slider(f'Enter {feature}', min_value=0, max_value=120, step=1, value=30)  # 整数输入框
         elif feature in ['wbc', 'RBC', 'TC', 'HDL-C', 'UA', 'bmi']:  # 浮点数输入
             val = st.number_input(f'Enter {feature} ({units[feature]})', min_value=0.0, step=0.1, value=0.0)
         else:  # 默认处理
