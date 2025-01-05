@@ -35,7 +35,7 @@ model_choice = st.selectbox('Choose the model:', ['PSG Model', 'NPE Model'])
 
 # 根据所选模型显示不同的输入选项
 if model_choice == 'PSG Model':
-     st.subheader('PSG Model: Feature Input')  # 添加子标题
+    st.subheader('PSG Model: Feature Input')  # 添加子标题
     data_1 = pd.read_csv('shhssmote.csv')
     selected_features = ['AGE', 'HEIGHT', 'WEIGHT', 'MINSPO2', 'AUGSPO2', 'ODI', 'TG', 'SLEEPEFFICIENCY', 'HDL-C']
     feature_inputs = []
