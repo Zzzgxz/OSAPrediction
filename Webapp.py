@@ -36,7 +36,7 @@ if model_choice == 'PSG Model':
     # 模型定义和训练逻辑
     X = data_1[selected_features]
     y = data_1['OSA']
-    model = AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=3), n_estimators=100, learning_rate=0.1, random_state=42)
+    model = AdaBoostClassifier(estimator=DecisionTreeClassifier(max_depth=3), n_estimators=100, learning_rate=0.1, random_state=42)
     model.fit(X, y)
     
 elif model_choice == 'NPE Model':
@@ -50,7 +50,7 @@ elif model_choice == 'NPE Model':
     # 模型定义和训练逻辑
     X = data_2[selected_features]
     y = data_2['OSA']
-    model = AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=3), n_estimators=100, learning_rate=0.1, random_state=42)
+    model = AdaBoostClassifier(estimator=DecisionTreeClassifier(max_depth=3), n_estimators=100, learning_rate=0.1, random_state=42)
     model.fit(X, y)
 
 
